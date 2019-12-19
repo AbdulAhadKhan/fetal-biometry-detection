@@ -1,7 +1,9 @@
-from keras import layers
-from keras import models
+import tensorflow
 
 def alex_net(input_shape=(200, 200, 1), number_of_classes=3, optimizer='adam'):
+    layers = tensorflow.keras.layers
+    Model = tensorflow.keras.models.Model
+
     input_layer = layers.Input(input_shape)
     conv1 = layers.Conv2D(96, 11, strides=4, activation='relu')(input_layer)
     pool1 = layers.MaxPool2D(3, 2)(conv1)

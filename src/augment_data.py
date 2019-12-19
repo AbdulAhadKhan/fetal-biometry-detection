@@ -1,8 +1,11 @@
 import os
+import tensorflow
 
-from keras.preprocessing.image import load_img
-from keras.preprocessing.image import img_to_array
-from keras.preprocessing.image import ImageDataGenerator
+keras = tensorflow.keras
+load_img = keras.preprocessing.image.load_img
+img_to_array = keras.preprocessing.image.img_to_array
+ImageDataGenerator = keras.preprocessing.image.ImageDataGenerator
+
 from numpy import expand_dims
 from PIL import Image
 
@@ -10,7 +13,7 @@ source_dir = './Data/Converted/'
 dest_dir = './Data/Augmented/'
 
 classes = os.listdir(source_dir)
-total_images = 500
+total_images = 1000
 
 if not os.path.exists(dest_dir):
     os.mkdir(dest_dir)
@@ -35,7 +38,7 @@ for c in classes:
         Image.fromarray(data.astype('uint8'), 'RGB').save(os.path.join(dest, f'{c}_{current:05d}.jpg'))
 
         sample = expand_dims(data, 0)
-        datagen = ImageDataGenerator(width_shift_range=[-10,10], rotation_range=5, 
+        datagen = ImageDataGenerator(width_shift_range=[-10,10], rotation_range=30, 
                                         horizontal_flip=True, fill_mode='nearest')
         it = datagen.flow(sample, batch_size=1)
 
