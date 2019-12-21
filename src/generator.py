@@ -18,7 +18,6 @@ class Generator:
         self.generator = data_generator.flow_from_directory(
             path, target_size=target_size, batch_size=batch_size, 
             class_mode=class_mode, color_mode=color_mode,
-            seed=42
         )
 
     def get_image_batch(self):
