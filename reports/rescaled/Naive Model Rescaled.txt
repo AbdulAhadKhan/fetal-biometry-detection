@@ -1,0 +1,9 @@
+              precision    recall  f1-score   support
+
+     Abdomen      0.668     0.965     0.789       200
+       Femur      0.918     0.505     0.652       200
+        Head      0.930     0.935     0.933       200
+
+    accuracy                          0.802       600
+   macro avg      0.839     0.802     0.791       600
+weighted avg      0.839     0.802     0.791       600

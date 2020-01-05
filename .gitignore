@@ -1,8 +1,9 @@
 # GitHub Official .gitignore file for python projects
 
 # Miscellaneous
-data/
-final_models/
+Data/
+models/
+*.h5
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
